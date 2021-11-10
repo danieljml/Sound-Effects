@@ -239,7 +239,7 @@ img {
 
 /*=============== HOME ===============*/
 .home__img {
-  width: 250px;
+  width: 550px;
 }
 
 .home__data {
@@ -265,6 +265,10 @@ img {
 .home__subtitle {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-2-5);
+}
+
+.subtitle__effects {
+  color: var(--purple-color);
 }
 
 .home__title-description {
@@ -321,7 +325,7 @@ img {
   align-items: center;
 }
 
-/*=============== SPECS ===============*/
+/*=============== SERVICES ===============*/
 .specs__container {
   position: relative;
 }
@@ -358,25 +362,22 @@ img {
 .specs__img {
   width: 250px;
   position: absolute;
-  top: 2rem;
-  right: -4rem;
+  top: 5rem;
+  right: -7rem;
 }
 
-/*=============== CASE ===============*/
+/*=============== ABOUT US ===============*/
 .case__container {
   position: relative;
   grid-template-columns: repeat(2, 1fr);
   color: var(--grey-color);
 }
 
-.case__data {
-  padding: 5rem 0 3rem;
-}
-
 .case__img {
   width: 250px;
   position: absolute;
-  left: -7rem;
+  top: 5rem;
+  left: -11rem;
 }
 
 .case__description {
@@ -386,7 +387,8 @@ img {
 
 /*=============== DISCOUNT ===============*/
 .discount__container {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   background-color: var(--dark-color);
   color: var(--white-color);
   padding: 2rem 1.5rem;
@@ -407,61 +409,8 @@ img {
 }
 
 .discount__img {
+  margin-top: 10px;
   width: 300px;
-  position: absolute;
-  top: 4rem;
-  right: -11rem;
-}
-
-/*=============== PRODUCTS ===============*/
-.products__line {
-  line-height: 4rem;
-}
-
-.products__container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem 1.5rem;
-  padding-top: 3rem;
-}
-
-.products__card {
-  position: relative;
-  height: 132px;
-  background-color: var(--dark-color);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  display: grid;
-}
-
-.products__img {
-  width: 80px;
-  position: absolute;
-  inset: 0;
-  margin-right: auto;
-  margin-left: auto;
-  top: -3rem;
-}
-
-.products__content {
-  align-self: flex-end;
-}
-
-.products__title,
-.products__price {
-  font-size: var(--small-font-size);
-}
-
-.products__price {
-  font-weight: var(--font-semi-bold);
-  color: var(--purple-color);
-}
-
-.products__button {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 0.35rem;
 }
 
 /*=============== FOOTER ===============*/
@@ -553,7 +502,7 @@ img {
 
 /*=============== MEDIA QUERIES ===============*/
 /* For small devices */
-@media screen and (max-width: 340px) {
+@media screen and (min-width: 340px) {
   .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
@@ -562,7 +511,7 @@ img {
     font-size: var(--big-font-size);
   }
   .home__img {
-    width: 200px;
+    width: 300px;
     top: -13rem;
   }
   .home__title {
@@ -583,15 +532,22 @@ img {
   }
   .case__img {
     width: 220px;
-    top: -2rem;
+    top: 3rem;
     left: -9rem;
   }
   .case__data {
     padding: 0;
   }
-  .products__container {
-    grid-template-columns: 142px;
-    justify-content: center;
+  .discount__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+  }
+  .discount__animate {
+    display: grid;
+    place-items: center;
+    text-align: center;
   }
 }
 
@@ -626,18 +582,6 @@ img {
     justify-content: center;
     align-items: center;
     column-gap: 2rem;
-  }
-  .discount__img {
-    position: initial;
-  }
-  .discount__container {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    align-items: center;
-  }
-  .products__container {
-    grid-template-columns: repeat(3, 142px);
-    justify-content: center;
   }
 }
 
@@ -693,6 +637,7 @@ img {
   .discount__container {
     grid-template-columns: 250px max-content;
     justify-content: center;
+    align-items: center;
     column-gap: 5rem;
     padding: 3rem 0;
   }
@@ -703,17 +648,10 @@ img {
   .discount__description {
     margin-bottom: var(--mb-2);
   }
-  .products__container {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 6rem 3rem;
-    padding-top: 5rem;
-  }
-  .products__card {
-    height: 152px;
-    padding: 0.85rem;
-  }
-  .products__img {
-    width: 105px;
+  .discount__animate {
+    display: grid;
+    justify-items: start;
+    text-align: start;
   }
 }
 
@@ -724,7 +662,7 @@ img {
     margin-right: auto;
   }
   .home__img {
-    width: 300px;
+    width: 400px;
     top: -15rem;
   }
   .home__title {
